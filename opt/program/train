@@ -1,0 +1,10 @@
+  #!/bin/bash
+
+echo "train running..."
+pwd
+### ローカルPCでの実行の場合
+base_dir=..
+
+${base_dir}/opt/ml/input/data/src/run.sh
+
+echo "train end"

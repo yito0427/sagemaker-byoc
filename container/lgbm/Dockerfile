@@ -18,18 +18,7 @@ RUN apt-get -y install build-essential
 RUN apt-get -y install wget
 
 ### install libraries
-RUN pip install numpy pandas scikit-learn matplotlib seaborn lightgbm xgboost optuna requests
-
-### installing TA-Lib
-RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
-RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && \
-    cd ta-lib && \
-    ./configure --prefix=/usr && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf ta-lib-0.4.0-src.tar.gz && rm -rf ta-lib
-RUN pip install TA-LIB
+RUN pip install numpy pandas scikit-learn matplotlib seaborn lightgbm
 
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
 # output stream, which means that logs can be delivered to the user quickly. PYTHONDONTWRITEBYTECODE
