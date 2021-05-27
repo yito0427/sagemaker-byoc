@@ -1,0 +1,3 @@
+#!/bin/bash
+bash /opt/ml/input/data/src/run.sh
+exit 0
