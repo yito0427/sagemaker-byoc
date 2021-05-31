@@ -18,7 +18,7 @@ RUN apt-get -y install build-essential
 RUN apt-get -y install wget
 
 ### install libraries
-RUN pip install numpy pandas scikit-learn matplotlib seaborn lightgbm
+RUN pip install numpy pandas scikit-learn matplotlib seaborn lightgbm boto3
 
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
 # output stream, which means that logs can be delivered to the user quickly. PYTHONDONTWRITEBYTECODE

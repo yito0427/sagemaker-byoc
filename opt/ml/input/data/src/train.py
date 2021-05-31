@@ -52,3 +52,12 @@ pred = np.where(pred_proba > 0.5, 1, 0)
 acc = accuracy_score(test_y, pred)
 print('Accuracy:', acc)
 # 予測結果を出力
+result = pd.DataFrame(np.append(np.array(test_y).reshape(-1,1), pred.reshape(-1,1), axis=1), columns=['target', 'pred'])
+result.to_csv('/opt/ml/model/result.csv', index=False)
+
+### boto3を利用する場合
+import boto3
+
+import boto3
+s3 = boto3.resource('s3') #S3オブジェクトを取得
+s3.meta.client.upload_file('/opt/ml/model/result.csv', 'work-aws-virginia', 'test-trainingjob/output/result2.csv')
